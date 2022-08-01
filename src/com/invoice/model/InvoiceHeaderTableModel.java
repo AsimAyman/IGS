@@ -1,36 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.pro.model;
+
+package com.invoice.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author DELL
- */
-public class TableModel extends AbstractTableModel {
 
-    private List<InvoiceHeader> invoicesList;
+public class InvoiceHeaderTableModel extends AbstractTableModel {
+
+    private List<InvoiceHeader> invoicesArray;
     private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
-    public TableModel(List<InvoiceHeader> invoicesList) {
-        this.invoicesList = invoicesList;
+    public InvoiceHeaderTableModel(List<InvoiceHeader> invoicesArray) {
+        this.invoicesArray = invoicesArray;
     }
 
-    public List<InvoiceHeader> getInvoicesList() {
-        return invoicesList;
+    public List<InvoiceHeader> getInvoicesArray() {
+        return invoicesArray;
     }
 
 
     @Override
     public int getRowCount() {
-        return invoicesList.size();
+        return invoicesArray.size();
     }
 
     @Override
@@ -77,17 +70,17 @@ public class TableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        InvoiceHeader row = invoicesList.get(rowIndex);
+        InvoiceHeader row = invoicesArray.get(rowIndex);
 
         switch (columnIndex) {
             case 0:
-                return row.getInvNum();
+                return row.getNum();
             case 1:
                 return row.getCustomerName();
             case 2:
-                return df.format(row.getInvDate());
+                return df.format(row.getInvoiceDate());
             case 3:
-                return row.getInvTotal();
+                return row.getLineTotal();
             default:
                 return "";
         }

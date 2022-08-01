@@ -1,17 +1,17 @@
 
-package com.pro.model;
+package com.invoice.model;
 
 public class InvoiceLine {
     private String itemName;
     private double itemPrice;
     private int itemCount;
-    private InvoiceHeader header;
+    private InvoiceHeader invoiceHeader;
 
-    public InvoiceLine(String itemName, double itemPrice, int itemCount, InvoiceHeader header) {
+    public InvoiceLine(String itemName, double itemPrice, int itemCount, InvoiceHeader invoiceHeader) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemCount = itemCount;
-        this.header = header;
+        this.invoiceHeader = invoiceHeader;
     }
     
     public String getItemName() {
@@ -38,12 +38,12 @@ public class InvoiceLine {
         this.itemCount = itemCount;
     }
 
-    public InvoiceHeader getHeader() {
-        return header;
+    public InvoiceHeader getInvoiceHeader() {
+        return invoiceHeader;
     }
 
-    public void setHeader(InvoiceHeader header) {
-        this.header = header;
+    public void setInvoiceHeader(InvoiceHeader invoiceHeader) {
+        this.invoiceHeader = invoiceHeader;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class InvoiceLine {
         return itemCount * itemPrice;
     }
     
-    public String getDataAsCSV() {
-        return "" + getHeader().getInvNum() + "," + getItemName() + "," + getItemPrice() + "," + getItemCount();
+    public String getDataCsv() {
+        return "" + getInvoiceHeader().getNum() + "," + getItemName() + "," + getItemPrice() + "," + getItemCount();
     }
 }

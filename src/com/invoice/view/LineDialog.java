@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pro.view;
+package com.invoice.view;
 
-import com.pro.VFrame;
+import com.invoice.MyFrame;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
-/**
- *
- * @author DELL
- */
-public class InvoiceLineDialog extends JDialog{
+public class LineDialog extends JDialog{
     private JTextField itemNameFd;
     private JTextField itemCountFd;
     private JTextField itemPriceFd;
@@ -26,7 +21,7 @@ public class InvoiceLineDialog extends JDialog{
     private JButton okBtn;
     private JButton cancelBtn;
     
-    public InvoiceLineDialog(VFrame frame) {
+    public LineDialog(MyFrame frame) {
         itemNameFd = new JTextField(20);
         itemNameLbl = new JLabel("Item Name");
         
@@ -58,15 +53,15 @@ public class InvoiceLineDialog extends JDialog{
         pack();
     }
 
-    public JTextField getItemNameFd() {
+    public JTextField getItemNameField() {
         return itemNameFd;
     }
 
-    public JTextField getItemCountFd() {
+    public JTextField getItemCountField() {
         return itemCountFd;
     }
 
-    public JTextField getItemPriceFd() {
+    public JTextField getItemPriceField() {
         return itemPriceFd;
     }
 }

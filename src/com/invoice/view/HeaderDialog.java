@@ -3,20 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pro.view;
+package com.invoice.view;
 
-import com.pro.VFrame;
+import com.invoice.MyFrame;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author DELL
- */
-public class InvoiceHeaderDialog extends JDialog {
+public class HeaderDialog extends JDialog {
     private JTextField custNameFd;
     private JTextField invDateFd;
     private JLabel custNameLbl;
@@ -24,7 +20,7 @@ public class InvoiceHeaderDialog extends JDialog {
     private JButton okBtn;
     private JButton cancelBtn;
 
-    public InvoiceHeaderDialog(VFrame frame) {
+    public HeaderDialog(MyFrame frame) {
         custNameLbl = new JLabel("Customer Name:");
         custNameFd = new JTextField(20);
         invDateLbl = new JLabel("Invoice Date:");

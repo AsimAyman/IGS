@@ -1,25 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.pro.model;
+
+package com.invoice.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author DELL
- */
-public class LinesTableModel extends AbstractTableModel {
+
+public class InvoiceLineTableModel extends AbstractTableModel {
 
     private List<InvoiceLine> invoiceLines;
     private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
     
-    public LinesTableModel(List<InvoiceLine> invoiceLines) {
+    public InvoiceLineTableModel(List<InvoiceLine> invoiceLines) {
         this.invoiceLines = invoiceLines;
     }
 
